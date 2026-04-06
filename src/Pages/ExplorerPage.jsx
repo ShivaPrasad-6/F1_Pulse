@@ -33,10 +33,6 @@ export default function ExplorerPage() {
       <main className="content-grid">
         <section className="panel panel-full">
           <div className="panel-heading">
-            <div>
-              <p className="eyebrow">Season explorer</p>
-              <h2>Archive browser</h2>
-            </div>
             <div className="filters">
               <label>
                 Season

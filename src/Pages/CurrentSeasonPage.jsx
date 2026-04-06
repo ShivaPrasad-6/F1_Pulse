@@ -59,8 +59,7 @@ export default function CurrentSeasonPage() {
         <section className="panel panel-wide">
           <div className="panel-heading">
             <div>
-              <p className="eyebrow">Current championship</p>
-              <h2>Driver standings</h2>
+              <p className="eyebrow">Championship Driver standings</p>
             </div>
           </div>
           {loading ? (
