@@ -5,7 +5,6 @@ export default function KnowledgePage() {
   return (
     <>
       <header className="page-hero">
-        <p className="eyebrow">Knowledge Base</p>
         <h1>Formula 1 history and legendary champions</h1>
         <p className="hero-copy">
           A concise reference spanning the sport from 1950 to today, with key technical and competitive shifts plus benchmark champions.

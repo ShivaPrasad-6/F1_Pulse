@@ -1,5 +1,10 @@
 import React from 'react';
-import { getCurrentDrivers, getCurrentSeasonSummary, getDriverCareerSummary } from '../services/f1Api.js';
+import {
+  getCurrentDriverMedia,
+  getCurrentDrivers,
+  getCurrentSeasonSummary,
+  getDriverCareerSummary,
+} from '../services/f1Api.js';
 
 export function useRacersData() {
   const [drivers, setDrivers] = React.useState([]);
@@ -14,9 +19,10 @@ export function useRacersData() {
     async function loadDrivers() {
       try {
         setLoading(true);
-        const [driversData, seasonSummary] = await Promise.all([
+        const [driversData, seasonSummary, mediaData] = await Promise.all([
           getCurrentDrivers(),
           getCurrentSeasonSummary(),
+          getCurrentDriverMedia(),
         ]);
 
         if (!active) {
@@ -26,15 +32,20 @@ export function useRacersData() {
         const standingsMap = new Map(
           (seasonSummary.driverStandings ?? []).map((entry) => [entry.Driver.driverId, entry]),
         );
+        const mediaMap = new Map(mediaData.map((entry) => [entry.driverNumber, entry]));
 
         const enrichedDrivers = driversData.map((driver) => {
           const standing = standingsMap.get(driver.driverId);
+          const media = mediaMap.get(String(driver.permanentNumber));
           return {
             ...driver,
             currentTeam: standing?.Constructors?.[0]?.name ?? 'Unknown',
             currentPosition: standing?.position ?? '-',
             currentPoints: standing?.points ?? '0',
             currentWins: standing?.wins ?? '0',
+            headshotUrl: media?.headshotUrl ?? '',
+            teamColor: media?.teamColor ?? '',
+            acronym: media?.acronym ?? driver.code ?? '',
           };
         });
 

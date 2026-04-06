@@ -24,7 +24,6 @@ export default function RacersPage() {
   return (
     <>
       <header className="page-hero">
-        <p className="eyebrow">Racers</p>
         <h1>Driver profiles and career detail</h1>
         <p className="hero-copy">
           Explore the current grid and inspect each racer’s identity, nationality, team, current season position, and career summary including starts, wins, podiums, poles, titles, and latest result.
@@ -66,7 +65,6 @@ export default function RacersPage() {
         <section className="panel">
           <div className="panel-heading">
             <div>
-              <p className="eyebrow">Selected racer</p>
               <h2>{selectedDriver ? `${selectedDriver.givenName} ${selectedDriver.familyName}` : 'Driver details'}</h2>
             </div>
           </div>
@@ -74,6 +72,32 @@ export default function RacersPage() {
             <p className="muted">Select a racer to inspect details.</p>
           ) : (
             <div className="detail-stack">
+              <article className="subpanel">
+                {selectedDriver.headshotUrl ? (
+                  <div className="driver-image-grid">
+                    <div className="driver-image-card">
+                      <img
+                        className="driver-image-focus-top"
+                        src={selectedDriver.headshotUrl}
+                        alt={`${selectedDriver.givenName} ${selectedDriver.familyName}`}
+                      />
+                    </div>
+                    <div
+                      className="driver-image-card driver-image-card-meta"
+                      style={{
+                        '--driver-accent': selectedDriver.teamColor ? `#${selectedDriver.teamColor}` : '#ff4d4d',
+                      }}
+                    >
+                      <strong>{selectedDriver.acronym || selectedDriver.code || 'F1'}</strong>
+                      <span>{selectedDriver.currentTeam}</span>
+                      <span>#{selectedDriver.permanentNumber ?? 'N/A'}</span>
+                    </div>
+                  </div>
+                ) : (
+                  <p className="muted">Driver image unavailable.</p>
+                )}
+              </article>
+
               <article className="subpanel">
                 <h3>Profile</h3>
                 <div className="profile-grid">

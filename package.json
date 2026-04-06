@@ -1,10 +1,22 @@
 {
   "name": "F1_Pulse",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "F1 Pulse - React dashboard for Formula 1 stats, history, strategy, and news",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
-  "private": true
+  "private": true,
+  "dependencies": {
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "react-router-dom": "^7.9.4",
+    "recharts": "^3.2.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^5.1.0",
+    "vite": "^7.1.12"
+  }
 }

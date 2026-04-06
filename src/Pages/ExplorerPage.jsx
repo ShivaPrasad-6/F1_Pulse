@@ -24,7 +24,6 @@ export default function ExplorerPage() {
   return (
     <>
       <header className="page-hero">
-        <p className="eyebrow">Explorer</p>
         <h1>Historic seasons, races, circuits, and strategy</h1>
         <p className="hero-copy">
           Browse completed seasons, inspect race weekends, and review public stint data and tactical patterns where detailed telemetry exists.
@@ -32,7 +31,7 @@ export default function ExplorerPage() {
       </header>
 
       <main className="content-grid">
-        <section className="panel panel-wide">
+        <section className="panel panel-full">
           <div className="panel-heading">
             <div>
               <p className="eyebrow">Season explorer</p>
@@ -135,7 +134,7 @@ export default function ExplorerPage() {
           )}
         </section>
 
-        <section className="panel panel-wide">
+        <section className="panel panel-full">
           <div className="panel-heading">
             <div>
               <p className="eyebrow">Strategy and tactics</p>
@@ -171,6 +170,43 @@ export default function ExplorerPage() {
                   ))}
                 </div>
               )}
+            </article>
+          </div>
+        </section>
+
+        <section className="panel panel-full">
+          <div className="panel-heading">
+            <div>
+              <p className="eyebrow">Season depth</p>
+              <h2>Full calendar and constructor table</h2>
+            </div>
+          </div>
+          <div className="season-layout">
+            <article className="subpanel">
+              <h3>Season calendar</h3>
+              <div className="results-table">
+                {seasonData.races.map((race) => (
+                  <div className="result-row" key={`${race.season}-${race.round}`}>
+                    <span>Rnd {race.round}</span>
+                    <span>{race.raceName}</span>
+                    <span>{race.Circuit.circuitName}</span>
+                    <strong>{formatDate(race.date)}</strong>
+                  </div>
+                ))}
+              </div>
+            </article>
+            <article className="subpanel">
+              <h3>Constructor standings</h3>
+              <div className="results-table">
+                {seasonData.constructorStandings.map((entry) => (
+                  <div className="result-row" key={`${entry.position}-${entry.Constructor.constructorId}`}>
+                    <span>P{entry.position}</span>
+                    <span>{entry.Constructor.name}</span>
+                    <span>{entry.wins} wins</span>
+                    <strong>{entry.points} pts</strong>
+                  </div>
+                ))}
+              </div>
             </article>
           </div>
         </section>

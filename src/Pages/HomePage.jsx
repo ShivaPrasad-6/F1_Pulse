@@ -27,7 +27,6 @@ export default function HomePage() {
     <>
       <header className="hero">
         <div>
-          <p className="eyebrow">Season Highlights</p>
           <h1>Highlights of the {currentYear} Formula 1 season</h1>
           <p className="hero-copy">
             Start with the key title fight signals, the next headline race, and the most important current-season movements across the grid.

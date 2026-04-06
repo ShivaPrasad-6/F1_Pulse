@@ -7,7 +7,6 @@ export default function ConstructorsPage() {
   return (
     <>
       <header className="page-hero">
-        <p className="eyebrow">Constructors</p>
         <h1>Current team standings and constructor race</h1>
         <p className="hero-copy">
           Review how teams compare in the current championship and how the constructor battle is evolving this season.
