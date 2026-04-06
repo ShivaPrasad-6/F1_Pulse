@@ -605,6 +605,176 @@ select {
   align-items: center;
 }
 
+.constructor-item {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+  padding: 14px 16px;
+  border-radius: 18px;
+  border: 1px solid var(--border);
+  background: var(--panel-strong);
+  color: var(--text);
+  cursor: pointer;
+  text-align: left;
+  transition: 160ms ease;
+}
+
+.constructor-item:hover,
+.constructor-item.active {
+  background: rgba(255, 77, 77, 0.08);
+  border-color: rgba(255, 77, 77, 0.34);
+}
+
+.constructor-car-stage {
+  position: relative;
+  min-height: 240px;
+  border-radius: 22px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background:
+    radial-gradient(circle at center, color-mix(in srgb, var(--car-primary) 28%, transparent), transparent 58%),
+    linear-gradient(180deg, rgba(19, 24, 36, 0.6), rgba(19, 24, 36, 0.95));
+}
+
+.constructor-car-stage-image {
+  background: #0c1018;
+}
+
+.constructor-car-photo {
+  width: 100%;
+  height: 100%;
+  min-height: 240px;
+  object-fit: cover;
+  display: block;
+}
+
+.constructor-car-image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(19, 24, 36, 0.12), rgba(19, 24, 36, 0.78));
+}
+
+.constructor-car-glow {
+  position: absolute;
+  inset: auto 10% 18% 10%;
+  height: 30px;
+  background: color-mix(in srgb, var(--car-primary) 40%, transparent);
+  filter: blur(32px);
+}
+
+.constructor-car {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: min(94%, 440px);
+  height: 120px;
+  transform: translate(-50%, -50%);
+}
+
+.constructor-car-body {
+  position: absolute;
+  left: 22%;
+  right: 22%;
+  top: 34%;
+  height: 34px;
+  border-radius: 24px;
+  background: linear-gradient(90deg, var(--car-primary), var(--car-secondary));
+}
+
+.constructor-car-cockpit {
+  position: absolute;
+  left: 38%;
+  top: -16px;
+  width: 24%;
+  height: 24px;
+  border-radius: 16px 16px 8px 8px;
+  background: #131824;
+  border: 2px solid rgba(255, 255, 255, 0.12);
+}
+
+.constructor-car-sidepod {
+  position: absolute;
+  top: 8px;
+  width: 18%;
+  height: 18px;
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--car-primary) 72%, white 28%);
+}
+
+.constructor-car-sidepod.left {
+  left: -10%;
+}
+
+.constructor-car-sidepod.right {
+  right: -10%;
+}
+
+.constructor-car-nose {
+  position: absolute;
+  left: 12%;
+  top: 43%;
+  width: 18%;
+  height: 16px;
+  border-radius: 10px;
+  background: var(--car-primary);
+}
+
+.constructor-car-wing {
+  position: absolute;
+  top: 38%;
+  width: 10%;
+  height: 24px;
+  border-radius: 4px;
+  background: var(--car-secondary);
+}
+
+.constructor-car-wing.front {
+  left: 4%;
+}
+
+.constructor-car-wing.rear {
+  right: 6%;
+}
+
+.constructor-car-wheel {
+  position: absolute;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #7f8797 0 20%, #10131b 21% 58%, #05070b 59% 100%);
+  top: 54%;
+}
+
+.constructor-car-wheel.front-left {
+  left: 18%;
+}
+
+.constructor-car-wheel.rear-left {
+  left: 64%;
+}
+
+.constructor-car-wheel.front-right {
+  left: 18%;
+  top: 12%;
+}
+
+.constructor-car-wheel.rear-right {
+  left: 64%;
+  top: 12%;
+}
+
+.constructor-car-label {
+  position: absolute;
+  left: 20px;
+  bottom: 18px;
+  color: rgba(255, 255, 255, 0.88);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
 .profile-grid {
   display: grid;
   gap: 10px;
