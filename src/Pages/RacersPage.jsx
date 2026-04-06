@@ -24,7 +24,7 @@ export default function RacersPage() {
   return (
     <>
       <header className="page-hero">
-        <h1>Driver profiles and career detail</h1>
+        <h1>Driver profiles</h1>
         <p className="hero-copy">
           Explore the current grid and inspect each racer’s identity, nationality, team, current season position, and career summary including starts, wins, podiums, poles, titles, and latest result.
         </p>

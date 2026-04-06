@@ -10,7 +10,7 @@ export default function NewsPage() {
   return (
     <>
       <header className="page-hero">
-        <h1>Formula 1 news and articles</h1>
+        <h1>Formula 1 News</h1>
         <p className="hero-copy">
           A separate news section for current F1 coverage, with fallback editorial content if the live feed is unavailable.
         </p>

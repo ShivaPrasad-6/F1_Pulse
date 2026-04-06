@@ -5,7 +5,7 @@ export default function KnowledgePage() {
   return (
     <>
       <header className="page-hero">
-        <h1>Formula 1 history and legendary champions</h1>
+        <h1>Formula 1 history</h1>
         <p className="hero-copy">
           A concise reference spanning the sport from 1950 to today, with key technical and competitive shifts plus benchmark champions.
         </p>
@@ -14,8 +14,7 @@ export default function KnowledgePage() {
         <section className="panel panel-wide">
           <div className="panel-heading">
             <div>
-              <p className="eyebrow">Knowledge base</p>
-              <h2>Formula 1 from the beginning</h2>
+              <p className="eyebrow">Formula 1 from the beginning</p>
             </div>
           </div>
           <div className="history-grid">
@@ -38,7 +37,6 @@ export default function KnowledgePage() {
           <div className="panel-heading">
             <div>
               <p className="eyebrow">Legends</p>
-              <h2>Champion reference</h2>
             </div>
           </div>
           <div className="compact-list">

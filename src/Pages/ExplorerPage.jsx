@@ -24,7 +24,7 @@ export default function ExplorerPage() {
   return (
     <>
       <header className="page-hero">
-        <h1>Historic seasons, races, circuits, and strategy</h1>
+        <h1>Historic seasons</h1>
         <p className="hero-copy">
           Browse completed seasons, inspect race weekends, and review public stint data and tactical patterns where detailed telemetry exists.
         </p>

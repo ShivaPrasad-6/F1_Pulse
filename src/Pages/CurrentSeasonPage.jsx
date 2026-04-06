@@ -26,7 +26,7 @@ export default function CurrentSeasonPage() {
     <>
       <header className="hero">
         <div>
-          <h1>Current season {currentYear} championship dashboard</h1>
+          <h1>Current season {currentYear} championship</h1>
           <p className="hero-copy">
             Track live championship standings, upcoming rounds, completed races, and the current driver title fight in a dedicated season view.
           </p>
